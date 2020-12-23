@@ -2,6 +2,7 @@
 @$year=$_GET['year'];
 //http://localhost/stok/gettody.php?symbol=ahpc
 include('main/simple_html_dom.php');
+header("Content-Type:JSON")
 if (isset($year))
     {
     $temp=[];
