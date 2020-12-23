@@ -27,7 +27,7 @@ if (isset($year))
         $item['s_no']   = $article->find('td', 0)->plaintext;
         if(!is_null($item['s_no']))
             {
-                $item['team_name']    = trim($article->find('td[2]', 0)->plaintext);
+                $item['team_name']    = trim(preg_replace('/\s+/',' ', $article->find('td[2]', 0)->plaintext));
                 $item['matches_played'] = $article->find('td[3]', 0)->plaintext;
                 $item['won'] = $article->find('td[4]', 0)->plaintext;
                 $item['lost'] = $article->find('td[5]', 0)->plaintext;
